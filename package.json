@@ -1,0 +1,19 @@
+{
+  "name": "todo-app",
+  "version": "0.0.1",
+  "description": "TODO app creada para impartir training básico de NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NosonX/todo-app.git"
+  },
+  "author": "Eduardo A. Montero",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NosonX/todo-app/issues"
+  },
+  "homepage": "https://github.com/NosonX/todo-app#readme"
+}
