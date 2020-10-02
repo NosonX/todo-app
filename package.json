@@ -2,8 +2,14 @@
   "name": "todo-app",
   "version": "0.0.1",
   "description": "TODO app creada para impartir training básico de NodeJS",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
+    "start": "NODE_ENV=production DEBUG=app:* nodemon --exec babel-node ./server.js",
+    "dev": "NODE_ENV=development DEBUG=app:* nodemon --exec babel-node ./server.js",
+    "webpack:build": "webpack --config ./webpack/config.js --mode production --env.production --progress",
+    "webpack:watch": "npm run webpack:build -- --watch",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +21,44 @@
   "bugs": {
     "url": "https://github.com/NosonX/todo-app/issues"
   },
-  "homepage": "https://github.com/NosonX/todo-app#readme"
+  "homepage": "https://github.com/NosonX/todo-app#readme",
+  "nodemonConfig": {
+    "ignore": [
+      "public"
+    ]
+  },
+  "pre-commit": ["lint"],
+  "dependencies": {
+    "@babel/cli": "^7.10.5",
+    "@babel/core": "^7.11.4",
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.11.0",
+    "chalk": "^4.1.0",
+    "debug": "^4.1.1",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.4"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.8.6",
+    "babel-loader": "^8.1.0",
+    "browser-sync": "^2.26.12",
+    "browser-sync-webpack-plugin": "^2.2.2",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^6.1.0",
+    "css-loader": "^4.3.0",
+    "cssnano": "^4.1.10",
+    "eslint": "^7.8.1",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "mini-css-extract-plugin": "^0.11.1",
+    "postcss-loader": "^4.0.1",
+    "pre-commit": "^1.2.2",
+    "sass": "^1.26.10",
+    "sass-loader": "^10.0.2",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  }
 }
